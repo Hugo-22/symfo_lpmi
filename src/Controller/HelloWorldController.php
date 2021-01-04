@@ -29,7 +29,7 @@ class HelloWorldController extends AbstractController
     }
 
     /**
-     * @Route("/hello/{name}", name="helloGet", methods={"GET"})
+     * @Route("/hello/{name}", name="helloGet", methods={"GET"}, requirements={"name"="[a-zA-Z]+"})
      */
     public function helloGet($name): Response
     {
