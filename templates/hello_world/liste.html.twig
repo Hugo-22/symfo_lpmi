@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HelloWorldController!
+{% endblock %}
+
+{% block body %}
+
+	<ul>
+		{% for nom in liste %}
+			<li>
+				<a href="{{path('helloGet', {'name': nom}) }}">
+					{{nom}}
+				</a>
+			</li>
+
+		{% endfor %}
+	</ul>
+
+{% endblock %}
