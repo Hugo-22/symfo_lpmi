@@ -12,11 +12,25 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RecordController extends AbstractController
 {
+
+    /**
+     * @Route("/record", name="record")
+     */
+    public function find(RecordRepository $repo)
+    {
+        $records = $repo->findAll();
+
+        return $this->render('record/index.html.twig', [
+            "records" => $records,
+        ]);
+    }
+
+
     /**
      * @Route("/create/record", name="create_record")
      * @Route("/update/record/{id}", name="update_record", methods="GET|POST")
      */
-    public function create(Record $record = null, Request $request, EntityManagerInterface $manager)
+    public function createUpdate(Record $record = null, Request $request, EntityManagerInterface $manager)
     {
         if (!$record)
             $record = new Record();

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RecordController!
+{% endblock %}
+
+{% block body %}
+	
+	{% for record in records %}
+		{{ record.nom }}
+		{{ record.nomArtiste }}
+		{{ record.type }}
+		{{ record.anneeSortie }}
+	{% endfor %}
+
+	
+{% endblock %}
